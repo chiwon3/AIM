@@ -1,0 +1,132 @@
+body {
+	background-color:black;
+	color:white;
+	margin:0;
+}
+
+.nav {
+	display: flex;
+	background-color: #202020;
+	padding: 15px
+}
+
+.search {
+	flex: 1;
+	border:2px solid dimgray;
+	margin: 0 50px;
+	text-align: center;
+}
+
+.toggle, .logo {
+	border: 1px solid dimgray;
+}
+
+.toggle {
+	width: 30px;
+	margin 0 10px;
+}
+
+.logo {
+	width: 100px;
+	height: 50px;
+	color: red;
+}
+
+.nav-right {
+	border: green 1px solid;
+	padding:8px;	
+}
+
+.profile {
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background-color:skyblue;
+	overflow: hidden;
+}
+
+.left-section {
+	border:2px solid red;
+	display: inline-block;
+	width:70%;
+	min-height: 600px;
+	padding-left: 20px;
+}
+
+.right-section {
+	border:2px solid blue;
+	display: inline-block;
+	width:28%;
+	min-height: 600px;
+	float: right;
+	height: 600px;
+	overflow-y: scroll;
+}
+
+.video-area {
+	height : 500px;
+	background-color: gray;
+}
+
+.video-title {
+	border:2px solid red;
+	padding:10px;
+	font-weight:bold;
+	font-size:1.5rem;
+}
+
+.video-info {
+	border:2px solid green;
+	color:#ccc;
+	display: flex;
+	position: relative;
+}
+
+.vldio_viewcounter {
+	border:2px solid yellow;
+}
+
+.video_button_container {
+	border: 2px solid pink;
+	display: flex;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.video_button_container div{
+	margin: 0 5px;
+	border : 2px solid yellow;
+}
+
+.listitem div {
+	border: green 1px solid;
+}
+
+.listitem {
+	padding:10px;
+}
+
+.list_thumnail {
+	height:80px;
+	width:40%;
+	background-color: grey;
+	float:left;
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.list_title {
+	font-weight: bold;
+	width: 55%;
+	display: inline-block;
+}
+
+.list_author {
+	color: #CCC;
+}
+
+.list_info {
+	font-size:0.8rem;
+	color: #ccc;
+}
