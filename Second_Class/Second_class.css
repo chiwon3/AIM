@@ -1,0 +1,22 @@
+.img_wrapper{
+     text-align: center;   
+}
+
+.naver{
+    font-weight: bold
+    font-size: 3rem;
+    color: green;
+}
+
+@media{   
+    body{
+        background:black;
+        color:white;
+    }
+    
+    
+div{
+    border:1px solid black;
+    display:inline-block;
+    width:70px;
+}
