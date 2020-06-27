@@ -1,0 +1,60 @@
+body {
+    margin : 0;
+}
+
+.navbar {
+    	display: flex;
+    	justify-content : space-between;
+    	align-items : center;
+    	background-color : #263343;
+}
+
+.leftnav {
+    	display: flex;
+    	border:2px solid red;
+    	padding-left: 20px;
+}
+
+.navlogo {
+    font-size : 50px;
+    width : 70px;
+    height : 70px;
+    border:2px solid red;
+    color : white;
+}
+
+.navtitle {
+    color : white;
+}
+
+
+.centernav {
+    	display: flex;
+    	text-align: center;
+    	border:2px solid red;
+}
+
+a {
+    text-decoration : none;
+    color : white;
+}
+
+.navitem {
+    display : flex;
+    list-style : none;
+    padding : 0 20px;
+}
+
+
+.rightnav {
+    	display: flex;
+    	border:2px solid red;
+}
+
+.myinfo i {
+    color : white;
+    font-size : 30px;
+    width : 70px;
+    height : 70px;
+    padding : 10 20 10 0px;
+}
