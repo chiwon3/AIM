@@ -1,0 +1,14 @@
+body {
+    align-item : center;
+}
+
+h1 {
+    text-align : center;
+}
+
+input.img-buttons {
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    }

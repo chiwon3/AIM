@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>게시판</title>
+</head>
+<body>
+    <h1><게시판></h1>
+    <a href="{% url 'second' %}">글쓰기</a>
+    {% for one_post in display_post %}
+        <h2>[ {{ one_post.id }} ]번째 글</h2>
+        <h3>제목 : {{ one_post.title }} - {{ one_post.nickname }}</h3>
+        <p>내용 : {{ one_post.body | slice:":100"}}</p>
+    {% endfor %}
+    
+</body>
+</html>
