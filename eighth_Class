@@ -39,8 +39,8 @@ docs.djangoproject.com 에 가면 필드 종류 볼수있음 주로 쓰는건 Ch
 그 외에 참고할만한 필드
 EmailField(max_length=254,**option) #Email 양식 안맞으면 오류값 리턴
 FileField(
-numberField(
-등등 있음
+numberField
+등등 있음 궁금한거 있으면 위에 사이트 들어가서 Field 검색해보기
 
 
 python manage.py makemigrations 쳐서 마이그레이션 해서 컴퓨터가 알아보게 프로그래밍 언어로 마이그레이션 해줌
@@ -131,7 +131,7 @@ def create(request):
 위에 방식은 tmp_post라는 빈 박스에 post에 입력되는 항목을 하나씩 담아서 전달하는 방식
 밑에 방식은 정해져있는 양식의 내용을 따로 다른곳에 저장하지 않고 전달하는 방식
 
-request 뒤에 POST와 GET을 하나라도 잘못 넣으면 blog_post.title may not be NULL 이라는 ERROR가 뜸
+request 뒤에 POST와 GET을 하나라도 잘못 넣으면 blog_post. may not be NULL 이라는 ERROR가 뜸
 게시판의 경우에는 따로 두번 저장할 필요가 없어서 아래의 경우가 더 직관적으로 표현되고 더 적합함
 
 
