@@ -1,4 +1,4 @@
-"""crproject URL Configuration
+"""crudproject URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/2.0/topics/http/urls/
@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blog.views import index,second,create,delete
+from blog.views import index,create_page,create,detail,update,delete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
-    path('second/', second, name="second"),
+    path('create_page/',create_page, name = "create_page"),
     path('create/', create, name="create"),
-    path('delete/>', delete, name="delete"),
+    path('detail/<int:post_id>', detail, name = "detail"),
+    path('update/<int:post_id>', update, name = "update"),
+    path('delete/<int:post_id>', delete, name = "delete"),
 ]
