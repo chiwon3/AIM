@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>crud</title>
+</head>
+<body>
+    <h1 class="title">mainpage</h1>
+    <a href="{% url 'create' %}">write</a>
+    <br><br><br>
+    <b> -- 글 list --</b><hr><br>
+    {% for one_blog in all_post %}
+        <a href="{% url 'detail' one_blog.id %}">
+        글번호 : {{one_blog.id}}
+        제목 : {{one_blog.title}}
+        닉네임 : {{one_blog.nick}}
+        </a><br>
+    {% endfor %}
+</body>
+</html>
