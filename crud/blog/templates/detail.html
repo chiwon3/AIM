@@ -12,6 +12,11 @@
     닉네임 : {{one_blog.nick}}<br>
     작성일 : {{one_blog.create.at}}<br>
     문의처 : {{one_blog.contact}}<br><hr>
+    내용   : {{one_blog.desc}}<br>
+    {% if one_blog.image%}
+        <img src="{{one_blog.image.url}}" alt = "실패"><br>
+    {% endif%}
+    <hr>
     <a href = "{% url 'edit' one_blog.id %}"> -- EDIT -- </a><br>
     <a href = "{% url 'delete' one_blog.id %}"> -- DELETE -- </a><br>
     <a href = "{% url 'index' %}"> -- HOME -- </a>

@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1 class="create_title">Write Page</h1>
-    <form method="Post">
+    <form method="Post" enctype="multipart/form-data" autocomplete=off>
         {% csrf_token %}
         {{myform.as_p}}
         <input type='submit'>

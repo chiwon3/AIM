@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,18 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>crud</title>
+    <link rel="stylesheet" href="{% static 'CRUDcss/index.css' %}" type="text/css" />
 </head>
 <body>
-    <h1 class="title">mainpage</h1>
-    <a href="{% url 'create' %}">write</a>
-    <br><br><br>
-    <b> -- 글 list --</b><hr><br>
-    {% for one_blog in all_post %}
-        <a href="{% url 'detail' one_blog.id %}">
-        글번호 : {{one_blog.id}}
-        제목 : {{one_blog.title}}
-        닉네임 : {{one_blog.nick}}
-        </a><br>
-    {% endfor %}
+    <h1 class="title">Main Page</h1>
+    {% if user.is_authenticated %}
+        <h2 id="nick">현재 사용자 : {{user}}</h2>
+        <a href="{% url 'logout' %}">로그아웃</a>
+        <a href="{% url 'create' %}" class="create_button">write</a>
+        <br><br><br>
+        <b> -- 글 list --</b><hr><br>
+        {% for one_blog in all_post %}
+            <a href="{% url 'detail' one_blog.id %}">
+            {% if one_blog.image%}
+                <img src="{{one_blog.photo_thumbnail.url}}" alt = "실패">
+            {% endif%}
+            글번호 : {{one_blog.id}}
+            제목 : {{one_blog.title}}
+            닉네임 : {{one_blog.nick}}
+            </a><br>
+        {% endfor %}
+    {% else %}
+        <a href="{% url 'signup' %}">--회원가입--</a>
+        <a href="{% url 'login' %}">--로그인--</a>
+    {% endif %}
+    <!--<img src="{% static 'CRUDimage/EPL_ranking1.jpg' %}" class="EPL_Rank"></img>-->
 </body>
 </html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DETAIL PAGE</h1>
+    제목 : {{one_blog.title}}<br>
+    내용 : {{one_blog.desc}}<br>
+    문의처 : {{one_blog.contact}}<br>
+    작성일: {{one_blog.created_at}}<br>
+    
+    <a href="{% url 'edit' one_blog.id %}">수정</a>
+    <a href="{% url 'delete' one_blog.id %}">삭제</a>
+    <br>
+    <a href="{% url 'index' %}">-> HOME </a>
+</body>
+</html>

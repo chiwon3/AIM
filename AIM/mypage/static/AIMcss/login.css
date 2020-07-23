@@ -1,0 +1,180 @@
+body {
+    margin : 0;
+  	background-color : #fff;
+}
+
+
+#mainnav {
+  display : flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items : center;
+  justify-content : space-between;
+  background-color : #fff;
+  width : 100%;
+  margin-top : 10px;
+}
+
+#centernav {
+  float : none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  position : relative;
+}
+
+#mainlogo {
+  position : relative;
+  height : 75px;
+}
+
+.login {
+    width : 410px;
+    position : absolute;
+    left : 50%;
+    top : 50%;
+    transform : translate(-50%, -50%);
+}
+
+.login h2 {
+    font-size : 32px;
+    color : black;
+    border-bottom : 2px solid black;
+    text-align : center;
+}
+
+.login ul {
+    padding :40px 0 32px 0;
+}
+
+.login li {
+    padding : 0 0 12px 0;
+  list-style-type: none;
+}
+
+.login li input {
+    width : 100%;
+    box-sizing : border-box;
+    height : 46px;
+    text-indent : 16px;
+}
+
+.login li input::-webkit-input-placeholder {
+    font-size : 16px;
+    text-indent : 16px;
+}
+
+.checkbox input {
+    display : none;
+}
+
+.checkbox span {
+    display : inline-block;
+    vertical-align : middle;
+    cursor : pointer;
+}
+
+.checkbox .icon {
+    position : relative;
+    width : 17px;
+    height : 17px;
+    border : 1px solid #c8ccd4;
+    border-radius : 3px;
+    transition : background 0.1s ease;
+}
+
+.checkbox .icon::after {
+    content : "";
+    position : absolute;
+    top : 1px;
+    left : 5px;
+    width : 5px;
+    height : 11px;
+    border-right : 2px solid #fff;
+    border-bottom : 2px solid #fff;
+    transform : rotate(45deg) scale(0);
+    transition : all 0.3s ease;
+    transition-delay : 0.15s;
+    opacity : 0;
+}
+
+.checkbox .text {
+    margin-left : 5px;
+}
+
+.checkbox input:checked ~ .icon {
+    border-color : transparent;
+    background : #ff1616;
+    animation : jelly 0.6s ease;
+}
+
+.checkbox input:checked ~ .icon::after {
+    opacity : 1;
+    transform : rotate(45deg) scale(1);
+}
+
+@keyframes jelly {
+    from {transform : scale(1, 1);}
+    30% {transform : scale(1.25, 0.75);}
+    40% {transform : scale(0.75, 1.25);}
+    50% {transform : scale(1.15, 0.85);}
+    65% {transform : scale(0.95, 1.05);}
+    75% {transform : scale(1.05, 0.95);}
+    to {transform : scale(1, 1);}
+}
+
+/*.login li input[type="checkbox"] {*/
+/*    position : absolute;*/
+/*    left : -99999%;*/
+/*}*/
+
+/*.login li input[type="checkbox"] + label {*/
+/*    height : 36px;*/
+/*    line-height : 36px;*/
+/*}*/
+
+/*.login li input[type="checkbox"] + label:before {*/
+/*    content: "";*/
+/*    display : inline-block;*/
+/*    width : 18px;*/
+/*    height : 18px;;*/
+/*    background : #fff;*/
+/*    vertical-align : middle;*/
+/*    background : url(../AIMimage/square-regular.svg) no-repeat;*/
+/*    border : #333;*/
+/*}*/
+
+/*.login li input[type="checkbox"] + label:after {*/
+/*    content: "";*/
+/*    display : inline-block;*/
+/*    width : 18px;*/
+/*    height : 18px;;*/
+/*    background : #fff;*/
+/*    vertical-align : middle;*/
+/*    background : url(../AIMimage/check-square-solid.svg) no-repeat;*/
+/*    border : #333;*/
+/*}*/
+
+.login button {
+    width : 100px;
+    height : 56px;
+    line-height : 56px;
+    background : #0fbcf9;
+    font-size : 18px;
+    color : #fff;
+}
+
+.login_etc ul {
+    display : flex;
+    justify-content : center;
+}
+
+.login_etc ul li {
+    padding : 0 18px;
+  list-style-type: none;
+}
+
+.login_etc ul li a {
+    font-size : 14px;
+    color : black;
+}

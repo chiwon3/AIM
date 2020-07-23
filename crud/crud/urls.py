@@ -17,6 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from blog.views import index,create,detail,edit,delete
 
+from django.conf import settings
+from django.conf.urls.static import static
+from account.views import signup
+from django.contrib.auth.views import LoginView,LogoutView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index,name="index"),
@@ -24,4 +29,9 @@ urlpatterns = [
     path('detail/<int:blog_id>',detail,name='detail'),
     path('edit/<int:edit_blog_id>',edit,name='edit'),
     path('delete/<int:blog_id>', delete, name = "delete"),
-]
+    path('signup/',signup, name="signup"),
+    path('accounts/login/',LoginView.as_view(),name="login"),
+    path('logout/',LogoutView.as_view(),name="logout"),
+
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+
