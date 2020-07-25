@@ -26,11 +26,11 @@ body {
 }
 
 
-.leftnav > input[type="radio"]{
+.tabmenu{
   display : none;
 }
 
-.leftnav > input[type="radio"] + label {
+.tabmenu + label {
   display:inline-block;
   padding : 20px;
   background : #ccc;
@@ -39,7 +39,7 @@ body {
   cursor : pointer;
 }
 
-.leftnav > input[type="radio"]:checked + label {
+.tabmenu:checked + label {
   background : #aaa;
   color : #000;
 }
@@ -153,43 +153,29 @@ body {
   background: #4cd137;
   border-color: #4cd137;
 }
+.container {
+  width:100%;
+  min-heigth: 100vh;
+  /*display:flex;*/
+  justify-content: space-between;
+  margin : 0 auto;
+  display : none;
+
+}
+
 
 iframe {
   margin : 1%;
 }
 
-.container1 {
-  width:100%;
-  min-heigth: 100vh;
-  /*display:flex;*/
-  justify-content: space-between;
-  display : none;
+#tab1:checked  .container1 {
+  display : block;
 }
 
-.input[id="tab1"]:checked ~ .container1 {
-  display : flex;
+#tab2:checked  .container2 {
+  display : block;
 }
 
-.container2 {
-  width:100%;
-  min-heigth: 100vh;
-  /*display:flex;*/
-  justify-content: space-between;
-  display : none;
-}
-
-.input[id="tab2"]:checked ~ .container2 {
-  display : flex;
-}
-
-.container3 {
-  width:100%;
-  min-heigth: 100vh;
-  /*display:flex;*/
-  justify-content: space-between;
-  display : none;
-}
-
-.input[id="tab3"]:checked ~ .container3 {
-  display : flex;
+#tab3:checked  .container3 {
+  display : block;
 }

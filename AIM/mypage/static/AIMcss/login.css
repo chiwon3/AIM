@@ -63,65 +63,109 @@ body {
     font-size : 16px;
     text-indent : 16px;
 }
-
-.checkbox input {
-    display : none;
+.checkbox input{
+    display: none;
 }
 
-.checkbox span {
-    display : inline-block;
-    vertical-align : middle;
-    cursor : pointer;
+.checkbox span{
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
 }
 
-.checkbox .icon {
-    position : relative;
-    width : 17px;
-    height : 17px;
-    border : 1px solid #c8ccd4;
-    border-radius : 3px;
-    transition : background 0.1s ease;
+
+.checkbox .icon{
+    position: relative;
+    height: 17px;
+    width: 17px;
+    border:1px solid #c8ccd4;
+    transition: background 0.1s ease;
+}
+.checkbox .icon::after {content: '';position: absolute;top: 1px;left: 5px;width: 5px;height: 11px;border-right: 2px solid #fff;border-bottom: 2px solid #fff;transform: rotate(45deg) scale(0);transition: all 0.3s ease;transition-delay: 0.15s;opacity: 0;}
+
+.checkbox .text{
+    margin-left: 5px;
 }
 
-.checkbox .icon::after {
-    content : "";
-    position : absolute;
-    top : 1px;
-    left : 5px;
-    width : 5px;
-    height : 11px;
-    border-right : 2px solid #fff;
-    border-bottom : 2px solid #fff;
-    transform : rotate(45deg) scale(0);
-    transition : all 0.3s ease;
-    transition-delay : 0.15s;
-    opacity : 0;
+.checkbox input:checked ~ .icon{
+    border-color: transparent;
+    background-color: #ff1616;
+    animation: jelly 0.6s ease;
 }
 
-.checkbox .text {
-    margin-left : 5px;
+.checkbox input:checked ~ .icon::after{
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
 }
 
-.checkbox input:checked ~ .icon {
-    border-color : transparent;
-    background : #ff1616;
-    animation : jelly 0.6s ease;
+@keyframes jelly{
+    from{transform: scale(1,1);}
+    30% {transform: scale(1.25, 0.75);}
+    40% {transform: scale(0.75, 1.25);}
+    50% {transform: scale(1.15, 0.85);}
+    65% {transform: scale(0.95, 1.05);}
+    75% {transform: scale(1.05, 0.95);}
+    to{transform: scale(1,1);}
 }
 
-.checkbox input:checked ~ .icon::after {
-    opacity : 1;
-    transform : rotate(45deg) scale(1);
-}
+/*.checkbox input {*/
+/*    display : none;*/
+/*}*/
 
-@keyframes jelly {
-    from {transform : scale(1, 1);}
-    30% {transform : scale(1.25, 0.75);}
-    40% {transform : scale(0.75, 1.25);}
-    50% {transform : scale(1.15, 0.85);}
-    65% {transform : scale(0.95, 1.05);}
-    75% {transform : scale(1.05, 0.95);}
-    to {transform : scale(1, 1);}
-}
+/*.checkbox span {*/
+/*    display : inline-block;*/
+/*    vertical-align : middle;*/
+/*    cursor : pointer;*/
+/*}*/
+
+/*.checkbox .icon {*/
+/*    position : relative;*/
+/*    width : 17px;*/
+/*    height : 17px;*/
+/*    border : 1px solid #c8ccd4;*/
+/*    border-radius : 3px;*/
+/*    transition : background 0.1s ease;*/
+/*}*/
+
+/*.checkbox .icon::after {*/
+/*    content : "";*/
+/*    position : absolute;*/
+/*    top : 1px;*/
+/*    left : 5px;*/
+/*    width : 5px;*/
+/*    height : 11px;*/
+/*    border-right : 2px solid #fff;*/
+/*    border-bottom : 2px solid #fff;*/
+/*    transform : rotate(45deg) scale(0);*/
+/*    transition : all 0.3s ease;*/
+/*    transition-delay : 0.15s;*/
+/*    opacity : 0;*/
+/*}*/
+
+/*.checkbox .text {*/
+/*    margin-left : 5px;*/
+/*}*/
+
+/*.checkbox input:checked ~ .icon {*/
+/*    border-color : transparent;*/
+/*    background : #ff1616;*/
+/*    animation : jelly 0.6s ease;*/
+/*}*/
+
+/*.checkbox input:checked ~ .icon ::after {*/
+/*    opacity : 1;*/
+/*    transform : rotate(45deg) scale(1);*/
+/*}*/
+
+/*@keyframes jelly {*/
+/*    from {transform : scale(1, 1);}*/
+/*    30% {transform : scale(1.25, 0.75);}*/
+/*    40% {transform : scale(0.75, 1.25);}*/
+/*    50% {transform : scale(1.15, 0.85);}*/
+/*    65% {transform : scale(0.95, 1.05);}*/
+/*    75% {transform : scale(1.05, 0.95);}*/
+/*    to {transform : scale(1, 1);}*/
+/*}*/
 
 /*.login li input[type="checkbox"] {*/
 /*    position : absolute;*/
@@ -178,3 +222,43 @@ body {
     font-size : 14px;
     color : black;
 }
+
+/*#mybox{*/
+/*    margin-bottom:100px;*/
+    
+/*    display:none;*/
+/*}*/
+/*.mysq{*/
+/*    border:2px solid red;*/
+/*    width:20px;*/
+/*    height:20px;*/
+/*    display:inline-block;*/
+/*    margin-bottom:20px;*/
+/*    background:white;*/
+/*        transition:all 0.2s ease-out;*/
+    
+        
+/*}*/
+/*.box-cont{*/
+/*display:flex;*/
+/*align-item:center;*/
+/*}*/
+
+/*#mybox:checked+.mysq{*/
+/*    opacity:1;*/
+/*    background:green;*/
+/*    transition:all 0.2s ease-out;*/
+/*}*/
+/*.child{*/
+/*    width:100%;*/
+/*    height:100%;*/
+/*    border:2px solid blue;*/
+/*    transform:scale(0);*/
+/*        transition:all 0.2s ease-out;*/
+
+/*}*/
+/*#mybox:checked+.mysq .child{*/
+/*    transform:scale(2);  */
+/*        transition:all 0.2s ease-out;*/
+
+/*}*/
