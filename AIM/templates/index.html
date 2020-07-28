@@ -1,0 +1,41 @@
+{% extends "base.html"%}
+{% load static %}
+{% block head %}
+    <link href="{% static 'AIMcss/index.css' %}" rel="stylesheet" />
+{% endblock %}
+    {% block content %}
+    <div class="search">
+        <div class="search-items" id="google-search">
+            <form action="https://www.google.com/search">
+                <input type="text" name="q" class="searchTerm" id="google-searchTerm" placeholder="S E A R C H">
+                <input type="submit" value="구글검색" class="search-submit" id="google-submit">
+            </form>
+        </div>
+        <div class="search-items" id="youtube-search">
+            <form action="https://www.youtube.com/results">
+                <input type="text" name="search_query" class="searchTerm" id="youtube-searchTerm" placeholder="S E A R C H">
+                <input type="submit" value="유튜브 검색" class="search-submit" id="youtube-submit">
+            </form>
+        </div>
+        <div class="search-items" id="naver-search">
+            <form action="https://search.naver.com/search.naver">
+                <input type="text" name="query" class="searchTerm" id="naver-searchTerm" placeholder="S E A R C H">
+                <input type="submit"  value="네이버 검색" class="search-submit" id="naver-submit">
+            </form>
+        </div>
+    </div>
+    <hr>
+            <div class="container" id="container1">
+                <iframe width=25% height="540" src="https://www.premierleague.com/tables" frameborder="0" allowfullscreen>
+                </iframe>
+                <iframe width=42% height="540" src="https://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
+                </iframe>
+                <iframe width=25% height="540" src="https://sports.news.naver.com/wfootball/schedule/index.nhn" frameborder="0" allowfullscreen>
+                </iframe>
+            </div>
+            <div class="container" id="container2">
+            
+            </div>    
+            <div class="container" id="container3">
+            </div>
+    {% endblock content %}

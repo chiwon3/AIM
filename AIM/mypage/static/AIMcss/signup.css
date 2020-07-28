@@ -1,0 +1,76 @@
+body {
+    margin : 0;
+  	background-color : #fff;
+}
+
+
+#mainnav {
+  display : flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items : center;
+  justify-content : space-between;
+  background-color : #fff;
+  width : 100%;
+  margin-top : 10px;
+}
+
+#centernav {
+  float : none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  position : relative;
+}
+
+#mainlogo {
+  position : relative;
+  height : 75px;
+}
+
+.signup {
+    width : 410px;
+    position : absolute;
+    left : 50%;
+    top : 50%;
+    transform : translate(-50%, -50%);
+}
+
+.signup h2 {
+    font-size : 32px;
+    color : black;
+    border-bottom : 2px solid black;
+    text-align : center;
+}
+
+.signup ul {
+    padding :40px 0 32px 0;
+}
+
+.signup li {
+  padding : 0 0 12px 0;
+  list-style-type: none;
+}
+
+.signup li input {
+    width : 100%;
+    box-sizing : border-box;
+    height : 46px;
+    text-indent : 16px;
+}
+
+.signup li input::-webkit-input-placeholder {
+    font-size : 16px;
+    text-indent : 16px;
+}
+
+
+form input[type=submit] {
+    width : 100%;
+    height : 46px;
+    line-height : 46px;
+    background-color : #0fbcf9;
+    font-size : 18px;
+    color : #fff;
+    cursor: pointer;
+}
