@@ -1,0 +1,85 @@
+{% extends "base.html"%}
+{% load static %}
+{% block head %}
+    <link href="{% static 'AIMcss/index.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block leftnav%}
+<div class="tab-bar">
+    <ul>
+        <li data-li="tab1" class="active">
+            <p>TAB+1</p>
+        </li>
+        <li data-li="tab2">
+            <p>TAB+2</p>
+        </li>
+        <li data-li="tab3">
+            <p>TAB+3</p>
+        </li>
+    </ul>
+    {% comment %} <input type="radio" name="tabmenu" class="tabmenu" id="tab1" checked/>
+    <label for="tab1">TAP+1</label>
+    <input type="radio" name="tabmenu" class="tabmenu" id="tab2"/>
+    <label for="tab2">TAP+2</label>
+    <input type="radio" name="tabmenu" class="tabmenu" id="tab3"/>
+    <label for="tab3">TAP+3</label> {% endcomment %}
+</div>
+{% endblock %}
+
+        {% block rightnav%}
+        <div class="setting-bar">
+            <a href="">
+                <img src="{% static 'AIMimage/cog-solid.svg' %}" onclick="alert('수정화면으로 이동합니다.');" style="cursor:pointer;" class="settinglist" id="setting-icon">
+            </a>
+            <a href="{% url 'login' %}">
+                <img src="{% static 'AIMimage/user-solid.svg'%}" class="settinglist" id="myinfo-icon">
+            </a>
+        </div>        
+        {% endblock %}
+
+
+    {% block content %}
+    <div class="search">
+        <div class="search-items" id="google-search">
+            <form action="https://www.google.com/search">
+                <input type="text" name="q" class="searchTerm" id="google-searchTerm" placeholder="S E A R C H">
+                <input type="submit" value="구글 검색" class="search-submit" id="google-submit">
+            </form>
+        </div>
+        <div class="search-items" id="youtube-search">
+            <form action="https://www.youtube.com/results">
+                <input type="text" name="search_query" class="searchTerm" id="youtube-searchTerm" placeholder="S E A R C H">
+                <input type="submit" value="유튜브 검색" class="search-submit" id="youtube-submit">
+            </form>
+        </div>
+        <div class="search-items" id="naver-search">
+            <form action="https://search.naver.com/search.naver">
+                <input type="text" name="query" class="searchTerm" id="naver-searchTerm" placeholder="S E A R C H">
+                <input type="submit"  value="네이버 검색" class="search-submit" id="naver-submit">
+            </form>
+        </div>
+    </div>
+    <hr>
+        <section class="containerbox">
+            <div class="containers" id="container1">
+                <div class="items">
+                    <iframe src="https://sports.news.naver.com/kbaseball/record/index.nhn?category=kbo" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items">
+                    <iframe src="https://sports.news.naver.com/kbaseball/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items">
+                    <iframe src="https://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            <div class="containers" id="container2" style="display: none;">
+            
+            </div>    
+            <div class="containers" id="container3" style="display: none;">
+            </div>
+        </section>
+    <script src="{% static 'AIMJS/index.js' %}"></script>
+    {% endblock content %}
