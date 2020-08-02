@@ -4,40 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link href="{% static 'AIMcss/base.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
     <title>All In Mypage{% block title %}{% endblock %}</title>
     {% block head %}{% endblock %}
 </head>
 <body>
-    <nav id="mainnav">
+    <nav class="mainnav">
         <div id="leftnav">
-            <input type="radio" name="tabmenu" class="tabmenu" id="tab1" checked/>
-            <label for="tab1">TAP+1</label>
-            <input type="radio" name="tabmenu" class="tabmenu" id="tab2"/>
-            <label for="tab2">TAP+2</label>
-            <input type="radio" name="tabmenu" class="tabmenu" id="tab3"/>
-            <label for="tab3">TAP+3</label>
+        {% block leftnav%}{% endblock %}
         </div>
         <div id="centernav">
             <a href="{% url 'index' %}">
                 <img src="{% static 'AIMimage/logo.svg' %}" id="mainlogo">
             </a>
-            <p>현재사용자 : {{ user }}</p>
+            {% comment %} <p>현재사용자 : {{ user }}</p>
             <a href="{% url 'logout' %}">
-                <p>로그아웃</p>
+                <p>로그아웃</p> {% endcomment %}
             </a>
         </div>
         <div id="rightnav">
-            <a href="">
-                <img src="{% static 'AIMimage/cog-solid.svg' %}" onclick="alert('수정화면으로 이동합니다.');" style="cursor:pointer;" class="settinglist" id="setting-icon">
-            </a>
-            <a href="{% url 'login' %}">
-                <img src="{% static 'AIMimage/user-solid.svg'%}" class="settinglist" id="myinfo-icon">
-            </a>
+        {% block rightnav%}{% endblock %}
         </div>
     </nav><hr>
     {% block content %}
     {% endblock %}
+    <script src="{% static 'AIMJS/base.js' %}"></script>
+
 </body>
 </html>

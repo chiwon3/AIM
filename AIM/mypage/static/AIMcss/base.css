@@ -1,13 +1,24 @@
 *{
   box-sizing: border-box;
+  -webkit-font-smoothing : antialiased;
 }
+
+@font-face { font-family: 'NanumBarunGothic';
+  src: url('/fonts/NanumBarunGothic.eot');
+  src: url('/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+  url('/fonts/NanumBarunGothic.woff') format('woff');}
+
+ 
+
 body {
     margin : 0;
   	background-color : #fff;
 }
 
 
-#mainnav {
+.mainnav {
+      position : fixed;
+      top : 0;
     	display : flex;
     	flex-wrap: wrap;
       align-content: center;
@@ -15,7 +26,14 @@ body {
     	justify-content : space-between;
     	background-color : #fff;
     	width : 100%;
-    	margin-top : 10px;
+      padding-top : 0.1vh;
+      z-index: 1;
+      transition: .3s ease-in-out;
+}
+
+nav .small{
+  height : 3rem;
+  background-color: #fff;
 }
 
 #leftnav {
@@ -25,29 +43,6 @@ body {
   padding : 0px;
 }
 
-
-.tabmenu{
-  display : none;
-}
-
-.tabmenu + label {
-  display:inline-block;
-  padding : 20px;
-  margin-left: 5px;
-  border-radius: 5px;
-  font: bold 15px;
-  text-shadow:none;
-  cursor : pointer;
-  background : #0fbcf9;
-  color : #fff;
-  font-size : 14px;
-  cursor : pointer;
-}
-
-.tabmenu:checked + label {
-  background : #546de5;
-  color : #fff;
-}
 
 #centernav {
   float : none;
@@ -62,19 +57,12 @@ body {
   height : 75px;
 }
 
+.small #mainlogo {
+  height: 3rem;
+}
+
 #rightnav {
   clear: both;
   display: flex;
   background : #fff;
-  padding : 0 20px;
-  margin-left : 100px;
-}
-
-.settinglist {
-  float : right;
-  position : relative;
-  padding : 15px 20px;
-  margin-left : 30px;
-  fill : black;
-  cursor : pointer;
 }

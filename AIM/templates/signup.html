@@ -8,13 +8,9 @@
         <h2 id="bigsignup">회원가입</h2>
         <ul>
         
-        {% for field in form %}
-                {{ field.errors }}         <! -- 필드 상단에 오류 메시지 출력 -->
-                <div class="form-group">
-                    <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                    {{ field }}
-                </div>
-        {% endfor %}
+            {% if form.errors %}
+            <p style="color:red;">정보를 알맞게 입력하지 않습니다. 다시 시도해주세요.</p>
+            {% endif %}
 
             <form action="{% url 'signup' %}" method="POST">{% csrf_token %}
                 <li><input type="text" name="username" placeholder="ID" title="아이디입력"/></li>
