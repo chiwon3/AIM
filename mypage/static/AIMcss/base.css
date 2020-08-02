@@ -2,6 +2,14 @@
   box-sizing: border-box;
   -webkit-font-smoothing : antialiased;
 }
+
+@font-face { font-family: 'NanumBarunGothic';
+  src: url('/fonts/NanumBarunGothic.eot');
+  src: url('/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+  url('/fonts/NanumBarunGothic.woff') format('woff');}
+
+ 
+
 body {
     margin : 0;
   	background-color : #fff;
@@ -24,7 +32,7 @@ body {
 }
 
 nav .small{
-  height : 4rem;
+  height : 3rem;
   background-color: #fff;
 }
 
@@ -50,7 +58,7 @@ nav .small{
 }
 
 .small #mainlogo {
-  height: 4rem;
+  height: 3rem;
 }
 
 #rightnav {

@@ -1,4 +1,4 @@
-.tab-bar ul li{
+.tab .tabindex{
   padding : 1.3vh 1vh 1.3vh 0px;
   margin-left: 1vh;
   border-radius: 5px;
@@ -15,27 +15,36 @@
   transition : all 0.2s ease;
   overflow: hidden;
   display: inline-block;
+  list-style: none;
   border-bottom: 1vh solid #0fbcf9;
 }
 
-.tab-bar ul li p{
+.small .tabindex{
+  padding : 1vh 0vh 1vh 0px;
+  margin-left: 1vh;
+  border-radius: 5px;
+  font: bold 10px;
+  font-size : 9px;
+  letter-spacing: 2px;
+  border-bottom: 0.2vh solid #0fbcf9;
   width: 100%;
   text-align: center;
   color : #fff;
   position: relative;
+  display: inline-block;
   margin : auto 0%;
 }
 
-.tab-bar ul li::before{
+.tabindex::before{
   content:"";
   position : absolute;
 }
 
-.tab-bar ul li:last-child{
+.tabindex:last-child{
   margin-bottom: 0;
 }
 
-.tab-bar ul li.active{
+.tab .tabindex.current{
   background : #546de5;
   color : #fff;
 }
@@ -67,7 +76,7 @@
   clear: both;
   display: flex;
   padding : 0 20px;
-  margin-left : 100px;
+  margin-left : 90px;
 }
 
 .settinglist {
@@ -79,6 +88,35 @@
   cursor : pointer;
 }
 
+.small .settinglist {
+  padding : 10px;
+}
+
+.setting-bar img {
+  height: 70px;
+}
+
+
+
+.loginbutton{
+  padding : 1.3vh 1vh;
+  margin-left: 1vh;
+  border-radius: 5px;
+  font: bold 15px;
+  text-shadow:none;
+  cursor : pointer;
+  background : #0fbcf9;
+  color : #fff;
+  vertical-align: center;
+  align-items : center;
+  font-size : 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition : all 0.2s ease;
+  overflow: hidden;
+  display: inline-block;
+  border: none;
+}
 
 .search {
   margin-top : 10vh;
@@ -139,11 +177,11 @@
 }
 
 #naver-searchTerm {
-  color: #4cd137;
+  color: #1ec800;
 }
 #naver-submit {
-  background: #4cd137;
-  border-color: #4cd137;
+  background: #1ec800;
+  border-color: #1ec800;
 } 
 
 .containerbox {
@@ -157,22 +195,26 @@
 .containers {
   width:100%;
   min-height: 100vh;
-  display:flex;
+  /* display:flex; */
   justify-content: space-between;
   margin : 0 auto;
-  /* display : none; */
+  display : none;
 }
 
+.containers.active {
+  display: flex;
+}
 
 .items {
   width : 100vh;
   height : 100vh;
   display: inline-block;
+  justify-content: space-between;
   margin : 5vh 0 5vh;
 }
 
 .items > iframe {
-  width : 50vh;
+  width : 60vh;
   height : 70vh;
 }
 /* 

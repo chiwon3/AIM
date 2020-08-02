@@ -20,5 +20,6 @@ from mypage.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index, name="index"),
-    path('accounts/',include('accounts.urls'))
+    path('accounts/',include('accounts.urls')),
+    path('accounts/', include('allauth.urls')),
 ]

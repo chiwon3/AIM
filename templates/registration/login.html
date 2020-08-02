@@ -30,6 +30,17 @@
                     </label>
                 </li>       
                 <li><input type="submit" class="login-button" value="로그인"></li>
+                {% load socialaccount %}
+                <li>
+                    <a href="{% provider_login_url "naver" %}">
+                        <input type="submit" class="Naver_Login" value="네이버 아이디로 로그인">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% provider_login_url "kakao" %}">
+                        <input type="submit" class="Kakao_Login" value="카카오 아이디로 로그인">
+                    </a>
+                </li>
             </form>
         </ul>
         <div class="login_etc">

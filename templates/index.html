@@ -6,16 +6,10 @@
 
 {% block leftnav%}
 <div class="tab-bar">
-    <ul>
-        <li data-li="tab1" class="active">
-            <p>TAB+1</p>
-        </li>
-        <li data-li="tab2">
-            <p>TAB+2</p>
-        </li>
-        <li data-li="tab3">
-            <p>TAB+3</p>
-        </li>
+    <ul class="tab">
+        <li class="tabindex current" data-tab="tab-1">TAB+1</li>
+        <li class="tabindex" data-tab="tab-2">TAB+2</li>
+        <li class="tabindex" data-tab="tab-3">TAB+3</li>
     </ul>
     {% comment %} <input type="radio" name="tabmenu" class="tabmenu" id="tab1" checked/>
     <label for="tab1">TAP+1</label>
@@ -28,12 +22,24 @@
 
         {% block rightnav%}
         <div class="setting-bar">
+        {% if user.is_authenticated %}
             <a href="">
                 <img src="{% static 'AIMimage/cog-solid.svg' %}" onclick="alert('수정화면으로 이동합니다.');" style="cursor:pointer;" class="settinglist" id="setting-icon">
             </a>
-            <a href="{% url 'login' %}">
+            <a href="{% url 'logout' %}">
                 <img src="{% static 'AIMimage/user-solid.svg'%}" class="settinglist" id="myinfo-icon">
             </a>
+                {% comment %} <ul class="dropdown">
+                    <li>현재사용자 : {{user}}</li>
+                    <li>정보수정</li>
+                    <li><a href="{% url 'logout' %}">로그아웃</li>
+                </ul> {% endcomment %}
+        {% else %}
+
+            <a href="{% url 'login' %}">
+                <button class="loginbutton">Login</button>
+            </a>
+        {% endif %}
         </div>        
         {% endblock %}
 
@@ -61,7 +67,7 @@
     </div>
     <hr>
         <section class="containerbox">
-            <div class="containers" id="container1">
+            <div class="containers active" id="tab-1">
                 <div class="items">
                     <iframe src="https://sports.news.naver.com/kbaseball/record/index.nhn?category=kbo" frameborder="0" allowfullscreen>
                     </iframe>
@@ -75,10 +81,21 @@
                     </iframe>
                 </div>
             </div>
-            <div class="containers" id="container2" style="display: none;">
-            
+            <div class="containers" id="tab-2">
+                <div class="items">
+                    <iframe src="https://comic.naver.com/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items">
+                    <iframe src="http://webtoon.daum.net/" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items">
+                    <iframe src="https://ko.tradingeconomics.com/south-korea/stock-market" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
             </div>    
-            <div class="containers" id="container3" style="display: none;">
+            <div class="containers" id="tab-3">
             </div>
         </section>
     <script src="{% static 'AIMJS/index.js' %}"></script>

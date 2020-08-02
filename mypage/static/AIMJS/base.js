@@ -1,7 +1,7 @@
 var $window = $(window),
     $mainnav = $('.mainnav'),
-    $defaultLogo = 'static/AIMimage/logo.svg',
-    $smallLogo = 'static/AIMimage/logo-small2.svg';
+    $defaultLogo = '/static/AIMimage/logo.svg',
+    $smallLogo = '/static/AIMimage/logo-small2.svg';
 
     $window.scroll(function(){
         if($(this).scrollTop() > 5){
@@ -20,9 +20,9 @@ var $window = $(window),
 
     function switchImages(scrollImage){
         var $logo = $('#mainlogo');
-        $logo.fadeOut(300, function(){
+        $logo.fadeOut(500, function(){
             $logo.attr('src', scrollImage);
-            $logo.fadeIn(300);
+            $logo.fadeIn(500);
         });
 
     }
