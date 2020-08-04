@@ -126,17 +126,21 @@
   justify-content : space-evenly;
 }
 
-.search-items {
-  position: relative;
-  display: flex;
+@media screen and (max-width: 1200px) {
+  .search {
+    display: inline-block;
+  }
+  .containers.active {
+    display: inline-block;
+  }
 }
 
 
 .search-items {
   position: relative;
   display: flex;
+}
 
-  }
 
 .searchTerm {
   width: 240px;

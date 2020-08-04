@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}" type="text/css" />
+{% endblock %}
+{% block content %}
+
+<div class="container">
+
+<h1>DETAIL PAGE</h1>
+
+<section>
+    
+<div class="dt_title">
+    제목 : {{detail_post.title}} 
+    <span>-by {{detail_post.author}}</span>
+</div>
+
+<div class="dt_desc">
+    {{detail_post.desc}}
+
+</div>
+
+<div class="dt_create_at">
+    {{detail_post.create_at}}
+
+</div>
+
+<div class="update_btn">
+    <a href="{% url 'update' detail_post.id %}">수정</a> |
+<a href="{% url 'delete' detail_post.id%}">삭제</a>
+</div>
+
+</section>
+
+<form method="POST" action="{% url 'comment_create' detail_post.id %}">
+    
+    {% csrf_token %}
+   {{comment_form.as_p}}
+<button type="submit">작성</button>
+</form>
+
+{%for com in comment_all%}
+    {{com.body}}(by {{com.author}}) ---- <a href="{% url 'comment_delete' detail_post.id com.id %}">X</a>
+{%endfor%}
+</div>
+
+{%endblock%}
