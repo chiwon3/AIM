@@ -8,7 +8,6 @@ class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,default=None)
     title = models.CharField("제목", max_length=50)
     desc = models.TextField("내용")
-    
     create_at = models.DateTimeField('작성시간', default = timezone.now)
     
     
