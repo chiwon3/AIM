@@ -3,10 +3,10 @@
   -webkit-font-smoothing : antialiased;
 }
 
-@font-face { font-family: 'NanumBarunGothic';
+/* @font-face { font-family: 'NanumBarunGothic';
   src: url('/fonts/NanumBarunGothic.eot');
   src: url('/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
-  url('/fonts/NanumBarunGothic.woff') format('woff');}
+  url('/fonts/NanumBarunGothic.woff') format('woff');} */
 
  
 
@@ -29,6 +29,13 @@ body {
       padding-top : 0.1vh;
       z-index: 1;
       transition: .3s ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+  .mainnav {
+    width : 1200px;
+    display: flex;
+  }
 }
 
 nav .small{
@@ -55,6 +62,7 @@ nav .small{
 #mainlogo {
   position : relative;
   height : 75px;
+  cursor: pointer;
 }
 
 .small #mainlogo {

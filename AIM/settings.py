@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'mypage.apps.MypageConfig',
     'accounts.apps.AccountsConfig',
+    'board.apps.BoardConfig',
+    'webcrawl.apps.WebcrawlConfig',
     'django.contrib.sites',
+    'django_summernote',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -95,6 +98,9 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'AIM.wsgi.application'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 # Database

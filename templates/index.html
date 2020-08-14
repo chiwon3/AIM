@@ -23,6 +23,9 @@
         {% block rightnav%}
         <div class="setting-bar">
         {% if user.is_authenticated %}
+            <a href="{% url 'board' %}">
+                <p>글쓰기</p>
+            </a>
             <a href="">
                 <img src="{% static 'AIMimage/cog-solid.svg' %}" onclick="alert('수정화면으로 이동합니다.');" style="cursor:pointer;" class="settinglist" id="setting-icon">
             </a>
@@ -66,32 +69,30 @@
         </div>
     </div>
     <hr>
+
         <section class="containerbox">
             <div class="containers active" id="tab-1">
+    
                 <div class="items">
-                    <iframe src="https://sports.news.naver.com/kbaseball/record/index.nhn?category=kbo" frameborder="0" allowfullscreen>
+                    <iframe id="iframe-1" src="http://sports.news.naver.com/kbaseball/record/index.nhn" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
                 <div class="items">
-                    <iframe src="https://sports.news.naver.com/kbaseball/index.nhn" frameborder="0" allowfullscreen>
+                    <iframe src="http://sports.news.naver.com/kbaseball/index.nhn" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
                 <div class="items">
-                    <iframe src="https://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
+                    <iframe src="http://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
             </div>
             <div class="containers" id="tab-2">
                 <div class="items">
-                    <iframe src="https://comic.naver.com/index.nhn" frameborder="0" allowfullscreen>
+                    <iframe src="http://comic.naver.com/index.nhn" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
                 <div class="items">
-                    <iframe src="http://webtoon.daum.net/" frameborder="0" allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="items">
-                    <iframe src="https://ko.tradingeconomics.com/south-korea/stock-market" frameborder="0" allowfullscreen>
+                    <iframe src="http://m.webtoon.daum.net/m/" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
             </div>    
