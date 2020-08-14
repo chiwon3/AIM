@@ -3,6 +3,6 @@ from django.db import models
 # Create your models here.
 
 class naverwebtoon(models.Model):
-    title = models.CharField(max_length=200)
-    img = models.URLField()
-    link = models.URLField()
+    title = models.TextField()
+    img = models.TextField()
+    link = models.TextField()
