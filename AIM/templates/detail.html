@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {%load static%}
-{% block extrahead %}
+{% block head %}
     <link rel="stylesheet" href="{% static 'AIMcss/detail.css' %}" type="text/css" />
 {% endblock %}
 {% block content %}
@@ -26,10 +26,12 @@
 
 </div>
 
+{% if detail_post.author == user %}
 <div class="update_btn">
     <a href="{% url 'update' detail_post.id %}">수정</a> |
 <a href="{% url 'delete' detail_post.id%}">삭제</a>
 </div>
+{% endif %}
 
 </section>
 
@@ -41,7 +43,9 @@
 </form>
 
 {%for com in comment_all%}
-    {{com.body}}(by {{com.author}}) ---- <a href="{% url 'comment_delete' detail_post.id com.id %}">X</a>
+    {{com.body}}(by {{com.author}}){% if com.author == user %} ---- <a href="{% url 'comment_delete' detail_post.id com.id %}">X</a>
+    {% endif %}
+    <br>
 {%endfor%}
 </div>
 

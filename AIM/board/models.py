@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+from django.conf.urls.static import static
+
 
 # Create your models here.
 
@@ -23,4 +25,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.body
-    
+

@@ -1,0 +1,15 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extrahead %}
+    <link rel="stylesheet" href="{% static 'AIMcss/write.css' %}" type="text/css" />
+{% endblock %}
+{% block content %}
+<section class="writeform">
+<h1>글쓰기 PAGE</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{write_form.as_p}}
+<button type="submit">작성</button>
+</form>
+</section>
+{%endblock%}

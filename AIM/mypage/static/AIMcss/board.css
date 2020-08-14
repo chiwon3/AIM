@@ -1,20 +1,22 @@
 .boardbox {
     margin-top : 80px;
+    
+}
+
+.settingbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
 }
 
 .cnt_post{
     position: relative;
-    top:-5rem;
-    left:5rem;
     color:#777;
     font-weight:bold;
 }
 
 .write_btn{
-    position:relative;
-    top:-5rem;
-    right:5rem;
-    color: white !important;
+    /* position:relative; */
     color: white !important;
     background-color:#0fbcf9;
     border-radius:0.4rem;
@@ -37,9 +39,15 @@ section{
 .post_row_label div{
     font-weight:bold;
 }
+
 .post_row:hover{
     background-color:#ccc;
 }
+
+.post_row_label:hover{
+    background-color:#fff;
+}
+
 .post_id{
     width:5rem;
     text-align:center;
@@ -47,6 +55,10 @@ section{
 .post_title{
     flex:1;
     
+}
+.post_author{
+    width:15rem;
+    text-align:center;
 }
 .post_date{
     width:15rem;

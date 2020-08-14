@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import Post,Comment
+from django_summernote.widgets import SummernoteWidget
 
 class PostForms(ModelForm):
     class Meta:

@@ -4,7 +4,9 @@ from .models import Post,Comment
 from django.contrib.auth import get_user_model
 from django.conf import settings
 User = get_user_model()
+
 # Create your views here.
+
 def board(request):
     context=dict()
     all_post = Post.objects.all()
@@ -57,7 +59,8 @@ def update(request,post_id):
         
 def delete(request,post_id):
     detail_post = Post.objects.get(id = post_id)
-    detail_post.delete()
+    if detail_post.author == request.user :
+        detail_post.delete()
     return redirect('board')
     
     

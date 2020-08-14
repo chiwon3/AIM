@@ -6,6 +6,7 @@ section{
     color: #111;
     position:relative;
     margin-bottom:10rem;
+    border-bottom:1.5px solid black;
     width:80%;
 }
 .dt_title{
@@ -21,7 +22,6 @@ section{
 .dt_desc{
     display:inline-block;
     padding-bottom:1rem;
-    border-bottom:1.5px solid black;
     line-height:1.5;
 }
 

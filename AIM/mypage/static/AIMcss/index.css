@@ -76,7 +76,6 @@
   clear: both;
   display: flex;
   padding : 0 20px;
-  margin-left : 90px;
 }
 
 .settinglist {
@@ -128,10 +127,12 @@
 
 @media screen and (max-width: 1200px) {
   .search {
-    display: inline-block;
+    width : 1200px;
+    display: flex;
   }
   .containers.active {
-    display: inline-block;
+    width : 1200px;
+    display: flex;
   }
 }
 
@@ -192,28 +193,26 @@
   width:100%;
   height: 65vh;
   margin : 0 auto;
-  justify-content: space-between;
   display: flex;
 }
 
 .containers {
   width:100%;
   height: 65vh;
-  /* display:flex; */
-  justify-content: space-between;
   margin : 0 auto;
   display : none;
 }
 
 .containers.active {
   display: flex;
+  justify-content: space-between;
 }
 
 .items {
   width : 100vh;
   height : 100%;
-  display: inline-block;
-  justify-content: space-between;
+  display: flex;
+  position: relative;
   margin : 5vh 0 5vh;
 }
 
@@ -221,6 +220,7 @@
   width : 60vh;
   height : 70vh;
 }
+
 /* 
 #tab1:checked  #container1 {
   display : flex;

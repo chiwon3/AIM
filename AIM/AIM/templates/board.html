@@ -1,0 +1,36 @@
+{% extends "base.html"%}
+{% load static %}
+{% block extrahead %}
+    <link href="{% static 'AIMcss/board.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+
+<div class="boardbox">
+        
+
+    <div class="cnt_post">
+        {{all_post|length}}개의 게시글
+    </div>
+    <a class="write_btn" href="{% url 'create' %}">
+        글쓰기
+    </a>
+    <section>
+        <div class="post_row post_row_label">
+            <div class="post_id"> 번호 </div>
+            <div class="post_title"> 제목 </div>
+            <div class="post_date">작성일</div>
+        </div>
+    
+        {% for one_post in all_post%}
+            <div class="post_row">
+                <div class="post_id"> {{one_post.id}} </div>
+                <div class="post_title"> <a href="{% url 'detail' one_post.id %}">{{one_post.title}}</a> </div>
+                <div class="post_date">{{one_post.create_at|date:" m-d "}}</div>
+            </div>
+        {%endfor%}
+    </section>
+
+</div>
+{%endblock%}
