@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+{% load static %}
+{% block head %}
+    <link href="{% static 'AIMcss/login.css' %}" rel="stylesheet" />
+{% endblock %}
+    {% block content %}
+    <section class="login">
+        <h2 id="biglogin">로그인</h2>
+        <ul>
+        
+            {% if form.errors %}
+            <p style="color:red;">아이디, 비밀번호가 일치하지 않습니다. 다시 시도해주세요.</p>
+            {% endif %}
+
+            <form action="{% url 'login' %}" method="POST" id="loginform">{% csrf_token %}
+                <li><input type="text" name="username" placeholder="ID" title="아이디입력"/></li>
+                <li><input type="password" name="password" placeholder="비밀번호" title="비밀번호입력"/></li>
+                <li>
+                    <label class="checkbox">
+                        <input type="checkbox" id="saveID"/>
+                        <span class="icon"></span>
+                        <span class="text">아이디 저장</span>
+                    </label>
+                </li>
+                <li>
+                    <label class="checkbox" >
+                        <input type="checkbox" id="autologin"/>
+                        <span class="icon"></span>
+                        <span class="text">자동 로그인</span>
+                    </label>
+                </li>       
+                <li><input type="submit" class="login-button" value="로그인"></li>
+                {% load socialaccount %}
+                <li>
+                    <a href="{% provider_login_url "naver" %}">
+                        <input type="submit" class="Naver_Login" value="네이버 아이디로 로그인">
+                    </a>
+                </li>
+                <li>
+                    <a href="{% provider_login_url "kakao" %}">
+                        <input type="submit" class="Kakao_Login" value="카카오 아이디로 로그인">
+                    </a>
+                </li>
+            </form>
+        </ul>
+        <div class="login_etc">
+            <ul>
+                <li><a href="{% url 'signup' %}">회원가입</a></li>
+                <li><a href="">아이디 찾기</a></li>
+                <li><a href="">비밀번호 찾기</a></li>
+            </ul>
+        </div>
+    </section>
+    <script src="{% static 'AIMJS/login.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,76 @@
+*{
+  box-sizing: border-box;
+  -webkit-font-smoothing : antialiased;
+}
+
+/* @font-face { font-family: 'NanumBarunGothic';
+  src: url('/fonts/NanumBarunGothic.eot');
+  src: url('/fonts/NanumBarunGothic.eot') format('embedded-opentype'),
+  url('/fonts/NanumBarunGothic.woff') format('woff');} */
+
+ 
+
+body {
+    margin : 0;
+  	background-color : #fff;
+}
+
+
+.mainnav {
+      position : fixed;
+      top : 0;
+    	display : flex;
+    	flex-wrap: wrap;
+      align-content: center;
+  	  align-items : center;
+    	justify-content : space-between;
+    	background-color : #fff;
+    	width : 100%;
+      padding-top : 0.1vh;
+      z-index: 1;
+      transition: .3s ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+  .mainnav {
+    width : 1200px;
+    display: flex;
+  }
+}
+
+nav .small{
+  height : 3rem;
+  background-color: #fff;
+}
+
+#leftnav {
+  clear: both;
+  display: flex;
+  background : #fff;
+  padding : 0px;
+}
+
+
+#centernav {
+  float : none;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  position : relative;
+}
+
+#mainlogo {
+  position : relative;
+  height : 75px;
+  cursor: pointer;
+}
+
+.small #mainlogo {
+  height: 3rem;
+}
+
+#rightnav {
+  clear: both;
+  display: flex;
+  background : #fff;
+}

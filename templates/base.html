@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href="{% static 'AIMcss/base.css' %}" rel="stylesheet" />
+    {% comment %} <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> {% endcomment %}
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+    <title>All In Mypage{% block title %}{% endblock %}</title>
+    {% block head %}{% endblock %}
+</head>
+<body>
+    <nav class="mainnav">
+        <div id="leftnav">
+        {% block leftnav%}{% endblock %}
+        </div>
+        <div id="centernav">
+            <a href="{% url 'index' %}">
+                <img src="{% static 'AIMimage/logo.svg' %}" id="mainlogo">
+            </a>
+            {% comment %} <p>현재사용자 : {{ user }}</p>
+            <a href="{% url 'logout' %}">
+                <p>로그아웃</p> {% endcomment %}
+            </a>
+        </div>
+        <div id="rightnav">
+        {% block rightnav%}{% endblock %}
+        </div>
+    </nav><hr>
+    {% block content %}
+    {% endblock %}
+    <script src="{% static 'AIMJS/base.js' %}"></script>
+
+</body>
+</html>
