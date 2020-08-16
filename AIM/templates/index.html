@@ -11,42 +11,30 @@
         <li class="tabindex" data-tab="tab-2">TAB+2</li>
         <li class="tabindex" data-tab="tab-3">TAB+3</li>
     </ul>
-    {% comment %} <input type="radio" name="tabmenu" class="tabmenu" id="tab1" checked/>
-    <label for="tab1">TAP+1</label>
-    <input type="radio" name="tabmenu" class="tabmenu" id="tab2"/>
-    <label for="tab2">TAP+2</label>
-    <input type="radio" name="tabmenu" class="tabmenu" id="tab3"/>
-    <label for="tab3">TAP+3</label> {% endcomment %}
 </div>
 {% endblock %}
 
         {% block rightnav%}
         <div class="setting-bar">
         {% if user.is_authenticated %}
-            <a href="{% url 'board' %}">
-                <p>글쓰기</p>
-            </a>
-            <a href="">
+            <a href="{% url 'edit_page' %}">
                 <img src="{% static 'AIMimage/cog-solid.svg' %}" onclick="alert('수정화면으로 이동합니다.');" style="cursor:pointer;" class="settinglist" id="setting-icon">
             </a>
-            <a href="{% url 'logout' %}">
-                <img src="{% static 'AIMimage/user-solid.svg'%}" class="settinglist" id="myinfo-icon">
-            </a>
-                {% comment %} <ul class="dropdown">
-                    <li>현재사용자 : {{user}}</li>
-                    <li>정보수정</li>
-                    <li><a href="{% url 'logout' %}">로그아웃</li>
-                </ul> {% endcomment %}
+            <div class="dropdown">
+                <div class="dropdown_display"> 메뉴 <span>▼</span></div>
+                <div class="dropdown_itembox">
+                    <div class="dropdown_item"><a href="{% url 'logout' %}">로그아웃</a></div>
+                    <div class="dropdown_item"><a href="{% url 'board' %}">게시판</a></div>
+                    <div class="dropdown_item"><a href="{% url 'create' %}">글쓰기</a></div>
+                </div>
+            </div>
         {% else %}
-
             <a href="{% url 'login' %}">
                 <button class="loginbutton">Login</button>
             </a>
         {% endif %}
         </div>        
         {% endblock %}
-
-
     {% block content %}
     <div class="search">
         <div class="search-items" id="google-search">
@@ -72,31 +60,40 @@
 
         <section class="containerbox">
             <div class="containers active" id="tab-1">
-    
-                <div class="items">
-                    <iframe id="iframe-1" src="http://sports.news.naver.com/kbaseball/record/index.nhn" frameborder="0" allowfullscreen>
-                    </iframe>
+                <div class="items" id="tab-1-1">
                 </div>
-                <div class="items">
-                    <iframe src="http://sports.news.naver.com/kbaseball/index.nhn" frameborder="0" allowfullscreen>
-                    </iframe>
+                <div class="items" id="tab-1-2">
                 </div>
-                <div class="items">
-                    <iframe src="http://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
-                    </iframe>
+                <div class="items" id="tab-1-3">
                 </div>
             </div>
             <div class="containers" id="tab-2">
-                <div class="items">
+                <div class="items" id="tab-2-1">
                     <iframe src="http://comic.naver.com/index.nhn" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
-                <div class="items">
+                <div class="items" id="tab-2-2">
                     <iframe src="http://m.webtoon.daum.net/m/" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items" id="tab-2-3">
+                    <iframe src="http://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
                     </iframe>
                 </div>
             </div>    
             <div class="containers" id="tab-3">
+                <div class="items" id="tab-3-1">
+                    <iframe src="http://sports.news.naver.com/kbaseball/record/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items" id="tab-3-2">
+                    <iframe src="http://sports.news.naver.com/kbaseball/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items" id="tab-3-3">
+                    <iframe src="http://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
             </div>
         </section>
     <script src="{% static 'AIMJS/index.js' %}"></script>

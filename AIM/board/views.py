@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from .forms import PostForms,CommentForms
 from .models import Post,Comment
 from django.contrib.auth import get_user_model
+from django.core.paginator import Paginator
 from django.conf import settings
 User = get_user_model()
 
@@ -11,6 +12,10 @@ def board(request):
     context=dict()
     all_post = Post.objects.all()
     context['all_post'] = all_post
+    paginator = Paginator(all_post, 10) # Show 10 contacts per page.
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    context['page_obj'] = page_obj
     return render(request,'board.html',context)
     
     

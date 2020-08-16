@@ -21,6 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index, name="index"),
     path('accounts/',include('accounts.urls')),
+    path('mypage/',include('mypage.urls')),
     path('board/', include('board.urls')),
     path('accounts/', include('allauth.urls')),
     path('webcrawl/',include('webcrawl.urls')),

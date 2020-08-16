@@ -29,7 +29,7 @@
 {% if detail_post.author == user %}
 <div class="update_btn">
     <a href="{% url 'update' detail_post.id %}">수정</a> |
-<a href="{% url 'delete' detail_post.id%}">삭제</a>
+    <a href="{% url 'delete' detail_post.id%}">삭제</a>
 </div>
 {% endif %}
 

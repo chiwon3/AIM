@@ -3,6 +3,11 @@
 {% block head %}
     <link rel="stylesheet" href="{% static 'AIMcss/write.css' %}" type="text/css" />
 {% endblock %}
+{% block rightnav%}
+        <a class="board_btn" href="{% url 'board' %}">
+            게시판
+        </a>
+{% endblock %}
 {% block content %}
 <section class="writeform">
 <h1>글쓰기 PAGE</h1>

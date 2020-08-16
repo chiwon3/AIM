@@ -33,7 +33,7 @@
             <div class="post_date">작성일</div>
         </div>
     
-        {% for one_post in all_post%}
+        {% for one_post in page_obj %}
             <a href="{% url 'detail' one_post.id %}">
                 <div class="post_row">
                     <div class="post_id"> {{one_post.id}} </div>
@@ -43,6 +43,24 @@
                 </div>
             </a>
         {%endfor%}
+        <div class="pagination">
+            <span class="step-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">&laquo; first</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                {% endif %}
+            </span>
+        </div>
+
     </section>
 
 </div>

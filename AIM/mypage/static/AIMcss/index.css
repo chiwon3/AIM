@@ -19,22 +19,6 @@
   border-bottom: 1vh solid #0fbcf9;
 }
 
-.small .tabindex{
-  padding : 1vh 0vh 1vh 0px;
-  margin-left: 1vh;
-  border-radius: 5px;
-  font: bold 10px;
-  font-size : 9px;
-  letter-spacing: 2px;
-  border-bottom: 0.2vh solid #0fbcf9;
-  width: 100%;
-  text-align: center;
-  color : #fff;
-  position: relative;
-  display: inline-block;
-  margin : auto 0%;
-}
-
 .tabindex::before{
   content:"";
   position : absolute;
@@ -49,28 +33,57 @@
   color : #fff;
 }
 
-/* .tabmenu{
-  display : none;
+.dropdown{
+  height: 60px;
+  width: 150px;
+  padding:10px 10px;
+  box-sizing:border-box;
+  font-size : 25px;
+  border-radius: 10px;
+  border:solid 1px #8c8c8c;
+  background-color: white;
+
+  position: relative;
+
+  cursor:pointer;
+
 }
 
-.tabmenu + label {
-  display:inline-block;
-  padding : 20px;
-  margin-left: 5px;
-  border-radius: 5px;
-  font: bold 15px;
-  text-shadow:none;
-  cursor : pointer;
-  background : #0fbcf9;
-  color : #fff;
-  font-size : 14px;
-  cursor : pointer;
+.dropdown_display{
+  display: flex;
+  justify-content: space-evenly;
+  font-weight: 800;
 }
 
-.tabmenu:checked + label {
-  background : #546de5;
-  color : #fff;
-} */
+.dropdown_itembox{
+  background-color: white;
+  border:solid 1px #8c8c8c;
+  border-radius: 10px;
+  position: absolute;
+  
+  margin-top:15px;
+  margin-left:-10px;
+  font-size: 20px;
+  box-sizing:border-box;
+  width:100%;
+
+  overflow: hidden;
+
+  display: none;
+}
+
+.dropdown_item{
+  padding:10px ;
+}
+
+.dropdown_item:hover{
+  background-color: #e7e7e7;
+}
+
+.show{
+  display: block;
+}
+
 
 .setting-bar {
   clear: both;
@@ -85,10 +98,6 @@
   margin-left : 30px;
   fill : black;
   cursor : pointer;
-}
-
-.small .settinglist {
-  padding : 10px;
 }
 
 .setting-bar img {
@@ -194,6 +203,7 @@
   height: 65vh;
   margin : 0 auto;
   display: flex;
+  justify-content:center;
 }
 
 .containers {
@@ -220,16 +230,3 @@
   width : 60vh;
   height : 70vh;
 }
-
-/* 
-#tab1:checked  #container1 {
-  display : flex;
-}
-
-#tab2:checked  #container2 {
-  display : flex;
-}
-
-#tab3:checked  #container3 {
-  display : flex;
-} */

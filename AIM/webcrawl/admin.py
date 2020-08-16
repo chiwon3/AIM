@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import naverwebtoon
+from .models import NaverWebtoon
 
-admin.site.register(naverwebtoon)
+admin.site.register(NaverWebtoon)

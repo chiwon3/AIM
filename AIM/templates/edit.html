@@ -1,0 +1,95 @@
+{% extends "base.html"%}
+{% load static %}
+{% block head %}
+    <link href="{% static 'AIMcss/edit.css' %}" rel="stylesheet" />
+{% endblock %}
+
+{% block leftnav%}
+<div class="tab-bar">
+    <ul class="tab">
+        <li class="tabindex current" data-tab="tab-1">TAB+1</li>
+        <li class="tabindex" data-tab="tab-2">TAB+2</li>
+        <li class="tabindex" data-tab="tab-3">TAB+3</li>
+    </ul>
+</div>
+{% endblock %}
+
+        {% block rightnav%}
+        <div class="setting-bar">
+        {% if user.is_authenticated %}
+            <a href="{% url back %}">
+                <img src="{% static 'AIMimage/arrow-left-solid.svg' %}" style="cursor:pointer;" class="settinglist" id="setting-icon">
+            </a>
+            <a href="{% url save %}">
+                <img src="{% static 'AIMimage/save-regular.svg' %}" style="cursor:pointer;" class="settinglist" id="setting-icon">
+            </a>
+        {% else %}
+            <a href="{% url 'login' %}">
+                <button class="loginbutton">Login</button>
+            </a>
+        {% endif %}
+        </div>        
+        {% endblock %}
+    {% block content %}
+    <div class="search">
+        <div class="search-items" id="google-search">
+            <form action="https://www.google.com/search">
+                <input type="text" name="q" class="searchTerm" id="google-searchTerm" placeholder="S E A R C H">
+                <input type="submit" value="구글 검색" class="search-submit" id="google-submit">
+            </form>
+        </div>
+        <div class="search-items" id="youtube-search">
+            <form action="https://www.youtube.com/results">
+                <input type="text" name="search_query" class="searchTerm" id="youtube-searchTerm" placeholder="S E A R C H">
+                <input type="submit" value="유튜브 검색" class="search-submit" id="youtube-submit">
+            </form>
+        </div>
+        <div class="search-items" id="naver-search">
+            <form action="https://search.naver.com/search.naver">
+                <input type="text" name="query" class="searchTerm" id="naver-searchTerm" placeholder="S E A R C H">
+                <input type="submit"  value="네이버 검색" class="search-submit" id="naver-submit">
+            </form>
+        </div>
+    </div>
+    <hr>
+
+        <section class="containerbox">
+            <div class="containers active" id="tab-1">
+                <div class="items" id="tab-1-1">
+                </div>
+                <div class="items" id="tab-1-2">
+                </div>
+                <div class="items" id="tab-1-3">
+                </div>
+            </div>
+            <div class="containers" id="tab-2">
+                <div class="items" id="tab-2-1">
+                    <iframe src="http://comic.naver.com/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items" id="tab-2-2">
+                    <iframe src="http://m.webtoon.daum.net/m/" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items" id="tab-2-3">
+                    <iframe src="http://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>    
+            <div class="containers" id="tab-3">
+                <div class="items" id="tab-3-1">
+                    <iframe src="http://sports.news.naver.com/kbaseball/record/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items" id="tab-3-2">
+                    <iframe src="http://sports.news.naver.com/kbaseball/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="items" id="tab-3-3">
+                    <iframe src="http://sports.news.naver.com/wfootball/index.nhn" frameborder="0" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    <script src="{% static 'AIMJS/edit.js' %}"></script>
+    {% endblock content %}

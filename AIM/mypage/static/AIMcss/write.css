@@ -6,3 +6,10 @@
     transform : translate(-50%, -50%);
 }
 
+.board_btn{
+    /* position:relative; */
+    color: white !important;
+    background-color:#0fbcf9;
+    border-radius:0.4rem;
+    padding: 0.5rem 1rem;
+}
