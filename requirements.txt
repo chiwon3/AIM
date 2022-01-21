@@ -10,7 +10,7 @@ Django==3.0.8
 django-allauth==0.42.0
 django-summernote==0.8.11.6
 idna==2.10
-ipython==7.16.1
+ipython==7.16.3
 ipython-genutils==0.2.0
 jedi==0.17.2
 oauthlib==3.1.0
